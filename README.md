@@ -13,7 +13,7 @@ Jupyter Notebook Extension to track user interation.
 -   Ensure that *jupyter notebook extensions manager* is installed.
     If not, follow the [directions](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html) and install it. 
 
--   Ensure that there is a jupyter notebook configuration file in your file system. When you execute ```jupyter --paths`` in the 
+-   Ensure that there is a jupyter notebook configuration file in your file system. When you execute ```jupyter --paths``` in the 
     command line, you should see a list of possible directories which can contain the config file. Check to see if you can find
     ```jupyter_notebook_config.json``` AND/OR ```jupyter_notebook_config.py``` in those directories. If you cannot, then execute: ```jupyter notebook --generate-config```. Some versions of Jupyter Notebook will include the python file and not the JSON config file. The py file can be configured
     for our purposes in this project. 
