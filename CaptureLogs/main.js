@@ -118,9 +118,10 @@ define([
                 "data": jsonData
             }
             console.log(JSON.stringify(log));
+            var baseurl = window.location.origin
 
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", 'http://localhost:8888/savelogs', true);
+            xhr.open("POST", baseurl + '/savelogs', true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.send(JSON.stringify({
                 value: log
