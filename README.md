@@ -35,6 +35,8 @@ Jupyter Notebook Extension to track user interation.
     the site-packages directory with other jupyter libraries. If you have difficulty identifying this directory, try running jupyter notebook from 
     the command line. If you find a 'SaveLogs module not found' error, that stack trace will identify the default path for the jupyter notebook libraries. 
     Make sure to add SaveLogs directly under site-packages in that path. 
+    
+-   You will need to execute the follow: `jupyter contrib nbextension install --user` if you are install Jupyter Notebook extensions manager for the first time. 
 
 -   Launch Jupyter Notebook from your command line. In the file explorer view, you should see an 'nbextensions' tab. Select the tab, and
     find 'Capture Logs' extension among the list of other available extensions. Select Capture Logs and enable the extension. Restart your
