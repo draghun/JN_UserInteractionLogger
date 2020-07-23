@@ -10,19 +10,19 @@ class SaveLogsHandler(IPythonHandler):
     def post(self):
         event = json.loads(self.request.body)
 
-        filename = event['value']['filename'] + '_log.json'
+        filename = event['value']['filename'] + '_log.txt'
         
-        data = []
-        if (not path.exists(filename)):
-            data = [event]
-        else:
-            with open(filename, 'r') as fs:
-                data = json.load(fs)
-                data.append(event)
-                fs.close()
+        # data = []
+        # if (not path.exists(filename)):
+        #     data = [event]
+        # else:
+        #     with open(filename, 'r') as fs:
+        #         data = json.load(fs)
+        #         data.append(event)
+        #         fs.close()
 
-        with open(filename, 'w+') as fs:
-            json.dump(data, fs)
+        with open(filename, 'a+') as fs:
+            fs.write(str(event))
             fs.close()
 
         self.finish('data recieved')
