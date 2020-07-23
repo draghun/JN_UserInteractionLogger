@@ -20,17 +20,23 @@ Jupyter Notebook Extension to track user interation.
 
 ### "Installing" extensions
 
--   Using the ```jupyter --paths``` command as a guide, identify the directory containing ```nbextensions```. Add the CaptureLogs folder from this
-    repo under ```nbextensions```.
+-   Using the ```jupyter --paths``` command as a guide, identify the directory containing ```nbextensions```. If none of the paths listed contain nbextensions, 
+    you might have to perform a machine level search for the directory. You might find multiple directories under the same name. The directory we want will have a
+    list of subdirectories of Jupyter Notebook extensions installed through the nbextentions command we executed above. Add the CaptureLogs folder from this
+    repo under ```nbextensions```. You will know that we have chosen the right directory when 'CaptureLogs' appears as one of the extensions to enable as part of
+    the nbextensions tab in the Jupyter Notebook home page. 
 
 -   Append content from config/jupyter_notebook_config.json to ```jupyter_notebook_config.json```. If this file is not present in your config directory,
     then, uncomment the commented lines in config/jupyter_notebook_config.py before appending those lines to ```jupyter_notebook_config.py```. If the json
-    file does exist, only append the uncommented lines to ```jupyter_notebook_config.py```. 
+    file does exist, only append the uncommented lines to ```jupyter_notebook_config.py```. You should find a py file in one of the config paths listed by jupyter
+    --paths command. 
 
 -   Using the ```jupyter --paths``` command as a guide, identify the directory containing jupyter libraries. Add the SaveLogs folder from this repo under 
     the site-packages directory with other jupyter libraries. If you have difficulty identifying this directory, try running jupyter notebook from 
     the command line. If you find a 'SaveLogs module not found' error, that stack trace will identify the default path for the jupyter notebook libraries. 
     Make sure to add SaveLogs directly under site-packages in that path. 
+    
+-   You will need to execute the follow: `jupyter contrib nbextension install --user` if you are install Jupyter Notebook extensions manager for the first time. 
 
 -   Launch Jupyter Notebook from your command line. In the file explorer view, you should see an 'nbextensions' tab. Select the tab, and
     find 'Capture Logs' extension among the list of other available extensions. Select Capture Logs and enable the extension. Restart your
@@ -43,5 +49,5 @@ Jupyter Notebook Extension to track user interation.
 -   Open your browser's developer tools and view the console. You should see logs labeled with an '[evt]' tag. This is the data being logged
     by our extension.
 -   You should also see a '[notebook name]'_log.json file in the same directory as your notebook. This file is the archive of all your user interaction. 
--   If you are not seeing these logs and the json log file is not being consturctued. Please constact Deepthi (draghun1@cs.umd.edu) for help with
+-   If you are not seeing these logs and the json log file is not being consturctued. Please contact Deepthi (draghun1@cs.umd.edu) for help with
     debugging.
